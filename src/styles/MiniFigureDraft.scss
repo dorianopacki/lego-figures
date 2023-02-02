@@ -1,0 +1,123 @@
+p {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: black;
+    margin: 0;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 300px;
+}
+
+.miniFigure {
+    width: 600px;
+    height: 900px;
+    background-color: white;
+    border-radius: 20px;
+
+    .miniFigure__Title {
+        display: inline-block;
+        font-size: 2rem;
+        width: 100%;
+        text-align: left;
+        color: black;
+        padding: 1rem 2rem 0;
+        font-weight: bold;
+    }
+
+    .miniFigure__Hero {
+
+        .miniFigure__Hero__Image {
+            height: 150px;
+            width: 150px;
+        }
+    }
+
+    .miniFigure__Parts {
+        width: 100%;
+        padding: 1rem;
+
+        .miniFigure__Parts__Element {
+            display: flex;
+
+            .miniFigure__Parts__Element__Id {
+                text-align: left;
+                color: rgb(214, 183, 4);
+                margin: 1rem 0;
+            }
+
+            .miniFigure__Parts__Element__Image {
+                width: 40px;
+                height: 40px;
+                align-self: center;
+                padding-right: 1.5rem;
+            }
+        }
+    }
+
+    .buttons__Container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        span {
+            font-size: 0.5rem;
+            color: rgba(128, 128, 128, 0.658);
+        }
+
+
+        .minifigButton {
+            @extend .button;
+
+            p {
+                color: white;
+            }
+
+            border-radius: 60px;
+            background-color: orange;
+
+        }
+
+        .minifigButton:hover {
+            cursor: pointer;
+            border: none;
+            background-color: #188646
+        }
+    }
+
+
+    .lookingForMinifig {
+        margin-top: 10rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .lookingForMinifig__Iamge {
+            width: 200px;
+            height: 200px;
+        }
+
+        .lookingForMinifig__Button {
+            @extend .button;
+
+            margin-top: 1rem;
+            border: 4px solid black;
+        }
+
+        .lookingForMinifig__Button:hover {
+            background-color: black;
+            border-color: white;
+            cursor: pointer;
+
+            p {
+                color: white;
+            }
+        }
+    }
+}
