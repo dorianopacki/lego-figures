@@ -101,10 +101,9 @@ const MiniFifureDraft = () => {
                 ) : (
                     <div className='lookingForMinifig'>
                         <img
-                            className='lookingForMinifig__Iamge'
+                            className='lookingForMinifig__Image'
                             src={robotics}
-                            alt="Robot"
-                            width="300px" />
+                            alt="Robot" />
                         <p>Are you looking for minifig?</p>
                         <div className='lookingForMinifig__Button' onClick={getMiniFig}>
                             <p>Click me!</p>
