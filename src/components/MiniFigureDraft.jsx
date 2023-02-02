@@ -10,7 +10,7 @@ import '../styles/MiniFigureDraft.scss'
 const MiniFifureDraft = () => {
     const { state } = useContext(MyContext);
     const [miniFigure, setMiniFigure] = useState('')
-    const [canPlaceAnOrder, setCanPlaceAnOrder] = useState(false);
+    const [notAbleToPlaceAnOrder, setNotAbleToPlaceAnOrder] = useState(false);
 
     const getMiniFig = useCallback(async () => {
         const figuresList = await getFiguresList();
@@ -20,7 +20,7 @@ const MiniFifureDraft = () => {
     }, [])
 
     useEffect(() => {
-        setCanPlaceAnOrder(!state.values || Object.values(state.values).some((element) => !element))
+        setNotAbleToPlaceAnOrder(!state.values || Object.values(state.values).some((element) => !element || state.errors))
     }, [state])
 
     const placeAnOrder = () => {
@@ -95,7 +95,7 @@ const MiniFifureDraft = () => {
                                 <p>DRAW AGAIN</p>
                             </div>
                             <span>——— OR ———</span>
-                            <button onClick={placeAnOrder} className='minifigButton' disabled={canPlaceAnOrder}> PLACE AN ORDER</button>
+                            <button onClick={placeAnOrder} className='minifigButton' disabled={notAbleToPlaceAnOrder}> PLACE AN ORDER</button>
                         </div>
                     </div>
                 ) : (
